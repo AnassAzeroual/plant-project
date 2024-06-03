@@ -17319,12 +17319,12 @@
       "bytes": 2295,
       "imports": []
     },
-    "src/app/modules/footer/footer.component.scss": {
-      "bytes": 926,
-      "imports": []
-    },
     "src/app/app.component.scss": {
       "bytes": 5508,
+      "imports": []
+    },
+    "src/app/modules/footer/footer.component.scss": {
+      "bytes": 926,
       "imports": []
     },
     "src/app/modules/explore/explore.component.scss": {
@@ -18401,16 +18401,6 @@
       "bytes": 1860,
       "ng-component": true
     },
-    "footer.component-2UA5GAW6.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/modules/footer/footer.component.scss": {
-          "bytesInOutput": 743
-        }
-      },
-      "bytes": 744,
-      "ng-component": true
-    },
     "app.component-GFJDDXFF.css": {
       "imports": [],
       "inputs": {
@@ -18419,6 +18409,16 @@
         }
       },
       "bytes": 4387,
+      "ng-component": true
+    },
+    "footer.component-2UA5GAW6.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/modules/footer/footer.component.scss": {
+          "bytesInOutput": 743
+        }
+      },
+      "bytes": 744,
       "ng-component": true
     },
     "explore.component-QYRX3DAH.css": {

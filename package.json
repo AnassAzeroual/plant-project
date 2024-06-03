@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node --max_old_space_size=18048 ./node_modules/@angular/cli/bin/ng serve --open --host 0.0.0.0",
-    "build": "rm -rf /docs && ng cache clean && ng build --aot --output-path docs --stats-json",
+    "build": "rm -rf /docs && ng cache clean && ng build --aot --output-path docs/ --stats-json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
