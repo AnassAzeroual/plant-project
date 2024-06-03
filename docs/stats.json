@@ -16920,7 +16920,7 @@
       "format": "esm"
     },
     "src/app/app-routing.module.ts": {
-      "bytes": 1827,
+      "bytes": 1864,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -17315,20 +17315,20 @@
       "bytes": 43,
       "imports": []
     },
-    "src/app/modules/explore/explore.component.scss": {
-      "bytes": 177,
-      "imports": []
-    },
-    "src/app/app.component.scss": {
-      "bytes": 5508,
-      "imports": []
-    },
     "src/app/modules/home/home.component.scss": {
       "bytes": 2295,
       "imports": []
     },
     "src/app/modules/footer/footer.component.scss": {
       "bytes": 926,
+      "imports": []
+    },
+    "src/app/app.component.scss": {
+      "bytes": 5508,
+      "imports": []
+    },
+    "src/app/modules/explore/explore.component.scss": {
+      "bytes": 177,
       "imports": []
     },
     "node_modules/zone.js/fesm2015/zone.js": {
@@ -17432,7 +17432,7 @@
       },
       "bytes": 644
     },
-    "main-X3KADCPW.js": {
+    "main-T4KR7TAF.js": {
       "imports": [
         {
           "path": "chunk-Q3B3ZQF3.js",
@@ -17486,7 +17486,7 @@
           "bytesInOutput": 985
         },
         "src/app/app-routing.module.ts": {
-          "bytesInOutput": 1040
+          "bytesInOutput": 1053
         },
         "node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-dropdown.mjs": {
           "bytesInOutput": 7278
@@ -17507,7 +17507,7 @@
           "bytesInOutput": 52
         }
       },
-      "bytes": 27186
+      "bytes": 27199
     },
     "chunk-VM32OH34.js": {
       "imports": [
@@ -18391,26 +18391,6 @@
       "bytes": 37,
       "ng-component": true
     },
-    "explore.component-QYRX3DAH.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/modules/explore/explore.component.scss": {
-          "bytesInOutput": 140
-        }
-      },
-      "bytes": 141,
-      "ng-component": true
-    },
-    "app.component-GFJDDXFF.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/app.component.scss": {
-          "bytesInOutput": 4386
-        }
-      },
-      "bytes": 4387,
-      "ng-component": true
-    },
     "home.component-4UAXUKYN.css": {
       "imports": [],
       "inputs": {
@@ -18429,6 +18409,26 @@
         }
       },
       "bytes": 744,
+      "ng-component": true
+    },
+    "app.component-GFJDDXFF.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/app.component.scss": {
+          "bytesInOutput": 4386
+        }
+      },
+      "bytes": 4387,
+      "ng-component": true
+    },
+    "explore.component-QYRX3DAH.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/modules/explore/explore.component.scss": {
+          "bytesInOutput": 140
+        }
+      },
+      "bytes": 141,
       "ng-component": true
     },
     "polyfills-A7MJM4D4.js": {
