@@ -1,0 +1,192 @@
+<nz-layout class="app-layout">
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Modal Menu PC                              -->
+  <!-- ----------------------------------------------------------------------- -->
+  <nz-sider class="menu-sidebar pc" nzCollapsible nzWidth="256px" nzBreakpoint="lg" [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null" nzTheme="light">
+
+    <ng-container *ngTemplateOutlet="menuPC"></ng-container>
+  </nz-sider>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                            Modal Menu Mobile                            -->
+  <!-- ----------------------------------------------------------------------- -->
+  <ng-container *ngTemplateOutlet="menuMobile"></ng-container>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Body Content                               -->
+  <!-- ----------------------------------------------------------------------- -->
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <div class="pc">
+          <span class="header-trigger" (click)="headerTriggerClick()">
+            <h1 class="app-name">{{ appName }}</h1>
+          </span>
+        </div>
+        <div class="mobile">
+          <div routerLink="/">
+            <img class="logo" ngSrc="../assets/free-plant-icon.png" alt="logo" height="512" width="512">
+          </div>
+        </div>
+
+        <div class="header-icons">
+          <span class="nz-icon" nz-icon nzType="user" nzTheme="outline"></span>
+          <span class="nz-icon" nz-icon nzType="star" nzTheme="outline"></span>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>
+      <app-footer></app-footer>
+    </nz-footer>
+  </nz-layout>
+</nz-layout>
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter"
+          (nzOnCancel)="handleCancel()">
+  <ng-template #modalTitle>Location and languages</ng-template>
+
+  <ng-template #modalContent class="modal-languages">
+    <div class="modal-languages">
+
+      <p>Modal Content</p>
+      <p>Modal Content</p>
+      <p>Modal Content</p>
+      <p>Modal Content</p>
+      <p>Modal Content</p>
+      <div class="not-completed">
+        this work not completed yet
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalFooter>
+    <button nz-button nzType="primary" (click)="handleOk()">Custom Submit</button>
+  </ng-template>
+</nz-modal>
+
+<ng-template #menuPC>
+  <div class="ant-layout-sider-children">
+    <div class="sidebar-logo"
+         [ngClass]="{'justify-content-center': isCollapsed,'justify-content-between': !isCollapsed}">
+      <div routerLink="/">
+        <img class="logo" src="../assets/free-plant-icon.png" alt="logo">
+        <h1 [hidden]="isCollapsed" class="animate__animated animate__flipInX">{{ appName }}</h1>
+      </div>
+      <div class="header-trigger" (click)="headerTriggerClick()">
+        @if (!isCollapsed) {
+          <span class="nz-icon trigger" nz-icon nzType="left" nzTheme="outline"></span>
+        } @else {
+          <span class="nz-icon trigger-open" nz-icon nzType="right" nzTheme="outline"></span>
+        }
+      </div>
+    </div>
+    <ul class="navigation-links-menu" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter routerLink="/home">
+        <span class="nz-icon" nz-icon nzType="search" nzTheme="outline"></span>
+        @if (!isCollapsed) {
+          <span> Home</span>
+        }
+      </li>
+      <li nz-menu-item nzMatchRouter routerLink="/explore">
+        <span class="nz-icon" nz-icon nzType="dashboard" nzTheme="outline"></span>
+        @if (!isCollapsed) {
+          <span>Explore</span>
+        }
+      </li>
+      <li nz-menu-item nzMatchRouter routerLink="/blog">
+        <span class="nz-icon" nz-icon nzType="file-text" nzTheme="outline"></span>
+        @if (!isCollapsed) {
+          <span> Blog</span>
+        }
+      </li>
+    </ul>
+    <div class="sider-footer" [ngClass]="{'icon-collapsed': isCollapsed}">
+      <div class="navigation-links-menu">
+
+        <div (click)="showModal()">
+      <span>
+        <img class="icon" src="../assets/icons/world.png" alt="translation icon">
+      </span>
+          <span [hidden]="isCollapsed">Morocco - FR</span>
+        </div>
+
+        <div>
+          <span class="nz-icon" nz-icon nzType="bg-colors" nzTheme="outline"></span>
+          <span [hidden]="isCollapsed">Contrast</span>
+        </div>
+
+      </div>
+      @if (!isCollapsed) {
+        <hr>
+        <div class="icons-zone">
+          <a href="https://www.facebook.com/" target="_blank" title="facebook">
+            <img src="./../assets/icons/facebook.png" alt="facebook">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" title="instagram">
+            <img src="./../assets/icons/instagram.png" alt="instagram">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" title="youtube">
+            <img src="./../assets/icons/youtube.png" alt="youtube">
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</ng-template>
+<ng-template #menuMobile>
+  <div class="menu-mobile mobile animate__animated"
+       [ngClass]="{'animate__slideInLeft': !isCollapsed,'animate__slideOutLeft': isCollapsed}">
+    <div class="sidebar-logo"
+         [ngClass]="{'justify-content-center': isCollapsed,'justify-content-between': !isCollapsed}">
+      <div class="header-trigger" (click)="headerTriggerClick()">
+        <span class="nz-icon trigger" nz-icon nzType="left" nzTheme="outline" [hidden]="isCollapsed"></span>
+        <span class="nz-icon trigger-open" nz-icon nzType="right" nzTheme="outline" [hidden]="!isCollapsed"></span>
+      </div>
+    </div>
+    <div class="ant-layout-sider-children">
+      <ul class="navigation-links-menu" nz-menu nzMode="inline">
+        <li nz-menu-item nzMatchRouter routerLink="/home">
+          <span class="nz-icon" nz-icon nzType="search" nzTheme="outline"></span> <span> Home
+        </span>
+        </li>
+        <li nz-menu-item nzMatchRouter routerLink="/explore">
+          <span class="nz-icon" nz-icon nzType="dashboard" nzTheme="outline"></span> <span>
+        Explore
+      </span>
+        </li>
+        <li nz-menu-item nzMatchRouter routerLink="/blog">
+          <span class="nz-icon" nz-icon nzType="file-text" nzTheme="outline"></span> <span> Blog
+    </span>
+        </li>
+      </ul>
+      <div class="sider-footer">
+        <div class="navigation-links-menu">
+          <div (click)="showModal()">
+      <span>
+        <img class="icon" src="../assets/icons/world.png" alt="translation icon">
+      </span>
+            <span [hidden]="isCollapsed">Morocco - FR</span>
+          </div>
+          <div><span class="nz-icon" nz-icon nzType="bg-colors" nzTheme="outline"></span> <span>Contrast</span></div>
+        </div>
+        <hr>
+        <div class="icons-zone">
+          <a href="https://www.facebook.com/" target="_blank" title="facebook">
+            <img src="./../assets/icons/facebook.png" alt="facebook">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" title="instagram">
+            <img src="./../assets/icons/instagram.png" alt="instagram">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" title="youtube"> <img src="./../assets/icons/youtube.png"
+                                                                                   alt="youtube"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

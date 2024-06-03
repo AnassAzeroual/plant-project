@@ -1,0 +1,25 @@
+<div class="container-footer">
+    <div class="left">
+        <p>About</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Cookies</p>
+        <p>Help & FAQ</p>
+    </div>
+    <div class="right">
+        <p>Contact US</p>
+    </div>
+</div>
+<div class="mobile-question-menu">
+    <img src="../../../assets/icons/question-signe-en-cercles.png" alt="Menu" nz-button nz-dropdown [nzDropdownMenu]="menu" nzPlacement="topLeft">
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+            <li class="nz-menu-item" nz-menu-item routerLink="/about">About</li>
+            <li class="nz-menu-item" nz-menu-item routerLink="/terms-and-conditions">Terms & Conditions</li>
+            <li class="nz-menu-item" nz-menu-item routerLink="/privacy-policy">Privacy Policy</li>
+            <hr class="divider">
+            <li class="nz-menu-item" nz-menu-item routerLink="/help">Help & FAQ</li>
+            <li class="nz-menu-item" nz-menu-item routerLink="/contact-us">Contact</li>
+        </ul>
+    </nz-dropdown-menu>
+</div>

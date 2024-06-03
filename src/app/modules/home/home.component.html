@@ -1,0 +1,44 @@
+<div class="container">
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                            not completed yet                            -->
+  <!-- ----------------------------------------------------------------------- -->
+  <div class="not-completed">
+    this work not completed yet
+  </div>
+  <div class="object-detection-visualizer">
+    <object-detection-visualizer></object-detection-visualizer>
+  </div>
+  <div class="list-objects-detected-with-filter">
+    <div class="filters">
+      @for (item of ['1', '1', '1', '1', '1', '1', '1'];track item;let i = $index) {
+        <p [ngClass]="{'filter-selected': selectedFilterId === i}" (click)="filterSelected(i)">
+          filter {{ i + 1 }}
+        </p>
+      }
+    </div>
+    @for (item of response.objects;track item;let i = $index) {
+      <div class="image-items">
+        <div>
+          {{ i + 1 }}.
+        </div>
+        <div class="image-box">
+          <img [src]="item.image" [alt]="item.title+' '+item.description">
+        </div>
+        <div class="descritpion-box">
+          <div>
+            {{ item.title }}
+          </div>
+          <div>
+            {{ item.description }}
+          </div>
+        </div>
+        <div class="extra-info-box">
+          <nz-rate [ngModel]="item.rate" nzAllowHalf></nz-rate>
+          <div class="price">
+            ${{ item.price }}
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
