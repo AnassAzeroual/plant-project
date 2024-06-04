@@ -10,7 +10,7 @@
   </div>
   <div class="list-objects-detected-with-filter">
     <div class="filters">
-      @for (item of ['1', '1', '1', '1', '1', '1', '1'];track item;let i = $index) {
+      @for (item of [{id:'1'}, {id:'2'}, {id:'3'}, {id:'4'}, {id:'5'}, {id:'6'}, {id:'7'}];track item;let i = $index) {
         <p [ngClass]="{'filter-selected': selectedFilterId === i}" (click)="filterSelected(i)">
           filter {{ i + 1 }}
         </p>

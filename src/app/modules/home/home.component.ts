@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { FormsModule } from '@angular/forms';
 import { NzRateComponent } from 'ng-zorro-antd/rate';
-import { NgClass } from '@angular/common';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import { ObjectDetectionVisualizerComponent } from '../../shared/Object-detection-visualizer/Object-detection-visualizer.component';
 
 interface APIResponse {
@@ -32,7 +32,7 @@ interface Object {
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     standalone: true,
-    imports: [ObjectDetectionVisualizerComponent, NgClass, NzRateComponent, FormsModule]
+  imports: [ObjectDetectionVisualizerComponent, NgClass, NzRateComponent, FormsModule, NgOptimizedImage]
 })
 export class HomeComponent implements OnInit {
   selectedFilterId!:number
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     this.srv.getList().subscribe((res : APIResponse) => {
       this.response = res['data'];
       console.log(this.response);
-      
+
     })
   }
 

@@ -1,21 +1,31 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {WelcomeComponent} from "./modules/welcome/welcome.component";
+import {HomeComponent} from "./modules/home/home.component";
+import {ExploreComponent} from "./modules/explore/explore.component";
+import {BlogComponent} from "./modules/blog/blog.component";
+import {AboutComponent} from "./modules/about/about.component";
+import {TermsAndConditionsComponent} from "./modules/terms-and-conditions/terms-and-conditions.component";
+import {PrivacyPolicyComponent} from "./modules/privacy-policy/privacy-policy.component";
+import {HelpAndFAQComponent} from "./modules/help-and-FAQ/help-and-FAQ.component";
+import {ContactUsComponent} from "./modules/contact-us/contact-us.component";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
-  { path: 'welcome', loadChildren: () => import('./modules/welcome/welcome.module').then(m => m.WelcomeModule) },
-  { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
-  { path: 'explore', loadChildren: () => import('./modules/explore/explore.module').then(m => m.ExploreModule) },
-  { path: 'blog', loadChildren: () => import('./modules/blog/blog.module').then(m => m.BlogModule) },
-  { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule) },
-  { path: 'terms-and-conditions', loadChildren: () => import('./modules/terms-and-conditions/terms-and-conditions.module').then(m => m.TermsAndConditionsModule) },
-  { path: 'privacy-policy', loadChildren: () => import('./modules/privacy-policy/privacy-policy.module').then(m => m.PrivacyPolicyModule) },
-  { path: 'help', loadChildren: () => import('./modules/help-and-FAQ/help-and-FAQ.module').then(m => m.HelpAndFAQModule) },
-  { path: 'contact-us', loadChildren: () => import('./modules/contact-us/contact-us.module').then(m => m.ContactUsModule) }
+  {path: '', pathMatch: 'full', redirectTo: '/welcome'},
+  {path: 'welcome', component: WelcomeComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'explore', component: ExploreComponent},
+  {path: 'blog', component: BlogComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent},
+  {path: 'help', component: HelpAndFAQComponent},
+  {path: 'contact-us', component: ContactUsComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true})],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

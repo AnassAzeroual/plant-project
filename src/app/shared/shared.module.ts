@@ -6,17 +6,16 @@ import { NzRateModule } from 'ng-zorro-antd/rate';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { IconsProviderModule } from '../icons-provider.module';
+
 import { NzModalModule } from 'ng-zorro-antd/modal';
 const components = [
   ObjectDetectionVisualizerComponent
 ]
 const ngZorro = [
-  NzRateModule,
-  IconsProviderModule,
-  NzLayoutModule,
-  NzMenuModule,
-  NzModalModule
+    NzRateModule,
+    NzLayoutModule,
+    NzMenuModule,
+    NzModalModule
 ]
 
 @NgModule({
